@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <link name="front_left_base"/>
+
+    <joint name="front_left_base_joint" type="fixed">
+        <origin xyz="0.095875 0.070109 -0.00014342" rpy="0 0 0" />
+        <parent link="base_footprint" />
+        <child link="front_left_base" />
+        <axis xyz="0 0 0" />
+    </joint>
+</robot>

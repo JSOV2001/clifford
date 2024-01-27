@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <link name="back_right_shoulder">
+        <inertial>
+        <origin xyz="-0.0011949536335166 -0.000194898254188031 -0.0222102507815983" rpy="0 0 0" />
+        <mass value="0.025126142116889" />
+        <inertia
+            ixx="7.27601970126321E-06"
+            ixy="3.44438377307185E-10"
+            ixz="4.26373608470215E-07"
+            iyy="7.42767546008952E-06"
+            iyz="1.23370809824072E-08"
+            izz="9.65288459956665E-06" />
+        </inertial>
+        <visual>
+            <origin
+                xyz="0 0 0"
+                rpy="0 0 0" />
+            <geometry>
+                <mesh
+                filename="package://clifford_gazebo/meshes/back_right_shoulder.STL" />
+            </geometry>
+            <material
+                name="">
+                <color
+                rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+            </material>
+        </visual>
+        <collision>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://clifford_gazebo/meshes/back_right_shoulder.STL" />
+        </geometry>
+        </collision>
+    </link>
+    
+    <joint
+        name="back_right_shoulder_joint"
+        type="revolute">
+        <origin
+        xyz="-0.095875 -0.070109 0.00015658"
+        rpy="0 0 0" />
+        <parent
+        link="base_footprint" />
+        <child
+        link="back_right_shoulder" />
+        <axis
+        xyz="-1 0 0" />
+        <limit
+        lower="-2.618"
+        upper="2.618"
+        effort="1.5"
+        velocity="10.5" />
+        <dynamics damping="0.9" friction="0.9" />
+    </joint>
+
+    <link
+        name="back_right_elbow">
+        <inertial>
+        <origin
+            xyz="0.0202162601891784 0.000515280883104798 -0.0497731175697516"
+            rpy="0 0 0" />
+        <mass
+            value="0.12887123981755" />
+        <inertia
+            ixx="2.83156403782466E-05"
+            ixy="5.64573742180093E-07"
+            ixz="6.12193389642473E-06"
+            iyy="3.16356135929173E-05"
+            iyz="-7.20838520865069E-07"
+            izz="2.20247137228737E-05" />
+        </inertial>
+        <visual>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://clifford_gazebo/meshes/back_right_elbow.STL" />
+        </geometry>
+        <material
+            name="">
+            <color
+            rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+        </material>
+        </visual>
+        <collision>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://clifford_gazebo/meshes/back_right_elbow.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <joint
+        name="back_right_elbow_joint"
+        type="revolute">
+        <origin
+        xyz="-2.49991776906031E-05 -1.40923242063357E-05 -0.0480000050094403"
+        rpy="0 1.5707963267949 0" />
+        <parent
+        link="back_right_shoulder" />
+        <child
+        link="back_right_elbow" />
+        <axis
+        xyz="0.000674496653436761 0.999999772527106 0" />
+        <limit
+        lower="-2.618"
+        upper="2.618"
+        effort="1.5"
+        velocity="10.5" />
+        <dynamics damping="0.9" friction="0.9" />
+    </joint>
+
+    <link
+        name="back_right_wrist">
+        <inertial>
+        <origin
+            xyz="-0.00613149692127565 -0.00562591120239708 -0.0498283590123388"
+            rpy="0 0 0" />
+        <mass
+            value="0.0434019946770257" />
+        <inertia
+            ixx="4.90519781396027E-05"
+            ixy="-4.0435942375585E-07"
+            ixz="-2.21199563817026E-06"
+            iyy="4.22791546041236E-05"
+            iyz="-5.08018008547823E-06"
+            izz="9.07313013016633E-06" />
+        </inertial>
+        <visual>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://clifford_gazebo/meshes/back_right_wrist.STL" />
+        </geometry>
+        <material
+            name="">
+            <color
+            rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+        </material>
+        </visual>
+        <collision>
+        <origin
+            xyz="0 0 0"
+            rpy="0 0 0" />
+        <geometry>
+            <mesh
+            filename="package://clifford_gazebo/meshes/back_right_wrist.STL" />
+        </geometry>
+        </collision>
+    </link>
+
+    <joint
+        name="back_right_wrist_joint"
+        type="revolute">
+        <origin
+        xyz="0.0552416229688087 -4.4986012904577E-05 -0.0905069264437419"
+        rpy="3.14159265358979 0 3.14159265358979" />
+        <parent
+        link="back_right_elbow" />
+        <child
+        link="back_right_wrist" />
+        <axis
+        xyz="-0.000814407853884512 0.999999668369868 0" />
+        <limit
+        lower="-2.618"
+        upper="2.618"
+        effort="1.5"
+        velocity="10.5" />
+        <dynamics damping="0.9" friction="0.9" />
+    </joint>
+
+    <link name="back_right_foot"/>
+
+    <joint
+        name="back_right_foot_joint"
+        type="fixed">
+        <origin
+        xyz="-0.00724297797178303 -0.013230908361604 -0.142218736258196"
+        rpy="0 0 0" />
+        <parent
+        link="back_right_wrist" />
+        <child
+        link="back_right_foot" />
+        <axis
+        xyz="0 0 0" />
+    </joint>
+</robot>

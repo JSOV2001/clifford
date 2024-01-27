@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <!-- Clifford's Base -->
+    <gazebo reference="base_footprint">
+        <material>Gazebo/Orange</material>
+        <mu1 value= "0.1"/>
+        <mu2 value= "0.1"/>
+    </gazebo>
+
+    <!-- Clifford's front right leg -->
+    <gazebo reference="front_right_shoulder">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    
+    <gazebo reference="front_right_elbow">
+        <material>Gazebo/Black</material>
+        <mu1 value= "0.1"/>
+        <mu2 value= "0.1"/>
+    </gazebo>
+
+    <gazebo reference="front_right_wrist">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    
+    <!-- Clifford's front left leg -->
+    <gazebo reference="front_left_shoulder">
+        <material>Gazebo/Green</material>
+    </gazebo>
+    
+    <gazebo reference="front_left_elbow">
+        <material>Gazebo/Black</material>
+        <mu1 value= "0.1"/>
+        <mu2 value= "0.1"/>
+    </gazebo>
+
+    <gazebo reference="front_left_wrist">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <!-- Clifford's back right leg -->
+    <gazebo reference="back_right_shoulder">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+    
+    <gazebo reference="back_right_elbow">
+        <material>Gazebo/Black</material>
+        <mu1 value= "0.1"/>
+        <mu2 value= "0.1"/>
+    </gazebo>
+
+    <gazebo reference="back_right_wrist">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Clifford's back left leg -->
+    <gazebo reference="back_left_shoulder">
+        <material>Gazebo/Purple</material>
+    </gazebo>
+    
+    <gazebo reference="back_left_elbow">
+        <material>Gazebo/Black</material>
+        <mu1 value= "0.1"/>
+        <mu2 value= "0.1"/>
+    </gazebo>
+
+    <gazebo reference="back_left_wrist">
+        <material>Gazebo/Purple</material>
+    </gazebo>
+    
+</robot>

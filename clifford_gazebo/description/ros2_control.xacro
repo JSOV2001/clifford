@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <!-- Hardware interface for Clifford's controller -->
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <!-- Hardware interface of Clifford's front right leg -->
+        <joint name="front_right_shoulder_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            </joint>
+            
+        <joint name="front_right_elbow_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="front_right_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <!-- Hardware interface of Clifford's front left leg -->
+        <joint name="front_left_shoulder_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+            </joint>
+        
+        <joint name="front_left_elbow_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="front_left_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface> 
+        </joint>
+
+        <!-- Hardware interface of Clifford's back right leg -->
+        <joint name="back_right_shoulder_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+            
+        <joint name="back_right_elbow_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="back_right_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <!-- Hardware interface of Clifford's back left leg -->
+        <joint name="back_left_shoulder_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+            
+        <joint name="back_left_elbow_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+
+        <joint name="back_left_wrist_joint">
+            <command_interface name="position">
+                <param name="min">-2.618</param>
+                <param name="max">2.618</param>
+            </command_interface>  
+            <state_interface name="position">
+                <param name="initial_value">0.0</param>
+            </state_interface>
+        </joint>
+    </ros2_control>
+    
+    <!-- Clifford's specific controller -->
+    <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">  
+            <robotNamespace>clifford</robotNamespace>
+            <parameters>$(find clifford_gazebo)/config/controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+</robot>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+  <xacro:include filename="base.xacro"/>
+  <xacro:include filename="leg_base.xacro"/>
+  <xacro:include filename="front_right_leg.xacro"/>
+  <xacro:include filename="gazebo_reference.xacro"/>
+  <xacro:include filename="front_left_leg.xacro"/>
+  <xacro:include filename="back_left_leg.xacro"/>
+  <xacro:include filename="back_right_leg.xacro"/>
+</robot>
